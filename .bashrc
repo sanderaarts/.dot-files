@@ -49,6 +49,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
+    . /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+fi
+
+source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\u@\h:\w$(__git_ps1)$ '
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[33m\]\u@\h\[\033[00m\]:\[\033[01;37m\]\w\[\033[00;34m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 else
@@ -101,3 +110,6 @@ fi
 
 export EDITOR=pico
 umask 0002
+
+export NVM_DIR="$HOME/sander/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
