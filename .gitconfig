@@ -1,0 +1,10 @@
+[alias]
+    co = checkout
+    st = status
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit
+    ci = commit
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    diff = auto
+    status = auto
