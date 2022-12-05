@@ -1,0 +1,5 @@
+#!/bin/bash
+ln -s ~/.dot-files/bash/.bashrc ~/.bashrc
+ln -s ~/.dot-files/bash/.inputrc ~/.inputrc
+ln -s ~/.dot-files/bash/.profile ~/.profile
+ln -s ~/.dot-files/bash/.screenrc ~/.screenrc

@@ -1,0 +1,3 @@
+#!/bin/bash
+ln -s ~/.dot-files/.colordiffrc ~/.colordiffrc
+ln -s ~/.dot-files/.npmrc ~/.npmrc
