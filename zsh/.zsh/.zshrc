@@ -36,16 +36,30 @@ alias -g ll='ls -alFH'
 alias -s txt='open -t'
 
 ### Prompt #####
+source ~/.git-prompt.sh
+#GIT_PS1_SHOWDIRTYSTATE='yes'
+#GIT_PS1_SHOWSTASHSTATE='yes'
+#GIT_PS1_SHOWUNTRACKEDFILES='yes'
+#GIT_PS1_SHOWCONFLICTSTATE='yes'
+#GIT_PS1_SHOWCOLORHINTS='yes'
+#GIT_PS1_HIDE_IF_PWD_IGNORED='yes'
+#GIT_PS1_SHOWUPSTREAM='auto'
 # Load version control information
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt PROMPT_SUBST
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats ' %F{21}(%b)%f'
+zstyle ':vcs_info:git:*' formats ' %F{21}%b %c%u%m%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{21}%b (%a)%f'
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "+"    # string for %c
+zstyle ':vcs_info:git:*' unstagedstr "-"  # string for %u
 # Set prompt
-PROMPT='%F{yellow}%n@%m%f:%F{white}%~%f${vcs_info_msg_0_} %(?.%F{green}√.%F{red}?%?)%f %# '
+#PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+#PROMPT='%F{yellow}%n@%m%f:%F{white}%~%f${vcs_info_msg_0_} %(?.%F{green}???.%F{red}?%?)%f %# '
+PROMPT='%F{yellow}%n@%m%f:%F{white}%~%f${vcs_info_msg_0_} %(?.%F{green}???.%F{red}?%?)%f %# '
 
 # Default editor
 export EDITOR=pico
