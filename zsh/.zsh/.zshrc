@@ -82,3 +82,6 @@ export PATH
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 manpath=("$NPM_PACKAGES/share/man" $manpath)
 export MANPATH
+
+# Python
+export PATH="${HOME}/.pyenv/shims:${PATH}"
