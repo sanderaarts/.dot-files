@@ -1,10 +1,31 @@
 [alias]
-    co = checkout
-    st = status
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit
-    ci = commit
-[core]
-    excludesfile = ~/.gitignore
+	co = checkout
+	st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit
+	ci = commit
+[commit]
+	verbose = true
 [color]
-    diff = auto
-    status = auto
+	diff = auto
+	status = auto
+[core]
+	excludesfile = ~/.gitignore
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[help]
+	autocorrect = prompt
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+	followTags = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[tag]
+	sort = version:refname
+[user]
+	name = Sander Aarts
