@@ -50,8 +50,8 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt PROMPT_SUBST
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats ' %F{21}%b %c%u%m%f'
-zstyle ':vcs_info:git:*' actionformats ' %F{21}%b (%a)%f'
+zstyle ':vcs_info:git:*' formats ' %F{cyan}%b %c%u%m%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{cyan}%b (%a)%f'
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "+"    # string for %c
